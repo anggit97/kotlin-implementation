@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 Service::class.java)
 
         //get data from github by username
-        service.getUser("ennur")
+        service.getUser("anggit97")
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
