@@ -3,6 +3,8 @@ package com.anggitprayogo.kotlinimplementation
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
 import android.util.Log
+import com.anggitprayogo.kotlinimplementation.R.id.activity_title
+import kotlinx.android.synthetic.main.activity_header.*
 
 /**
  * Created by Anggit on 10/01/2018.
@@ -11,10 +13,12 @@ abstract class BaseActivity : FragmentActivity() {
 
     protected abstract val tag : String
     protected abstract fun getLayout() : Int
+    protected abstract fun getActivityTitle() : Int
 
     override fun onCreate(savedInstanceState: Bundle?){
-        super.onCreate(savedInstanceState);
-        setContentView(getLayout())
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_header)
+        activity_title.setText(getActivityTitle())
         Log.v(tag, " [ON CREATE] ")
     }
 
@@ -58,3 +62,4 @@ abstract class BaseActivity : FragmentActivity() {
         Log.v(tag," [ ON DESTROY] ")
     }
 }
+
