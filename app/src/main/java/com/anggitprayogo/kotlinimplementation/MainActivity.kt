@@ -1,10 +1,7 @@
 package com.anggitprayogo.kotlinimplementation
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-
+import com.anggitprayogo.kotlinimplementation.Fragment.ItemFragment
 
 class MainActivity : BaseActivity() {
 
@@ -14,4 +11,9 @@ class MainActivity : BaseActivity() {
 
     override fun getLayout()= R.layout.activity_main
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val fragment = ItemFragment()
+        supportFragmentManager.beginTransaction().add(R.id.fragment_cotainer, fragment).commit()
+    }
 }

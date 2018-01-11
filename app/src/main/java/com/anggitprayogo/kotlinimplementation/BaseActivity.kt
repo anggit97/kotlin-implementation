@@ -17,7 +17,7 @@ abstract class BaseActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_header)
+        setContentView(getLayout())
         activity_title.setText(getActivityTitle())
         Log.v(tag, " [ON CREATE] ")
     }
